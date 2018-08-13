@@ -21,3 +21,4 @@ After downloading, extract everything from the zip and run `PlenteumWallet.exe`.
 
 The wallet is stable enough to run the release fine, however development is in progress and improvements are planned. You may download the release archive or compile yourself.
 
+**Forked from https://github.com/turtlecoin/turtle-wallet-winforms - many thanks!
