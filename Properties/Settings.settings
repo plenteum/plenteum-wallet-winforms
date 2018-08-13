@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PlenteumWallet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RPCprotocol" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http</Value>
+    </Setting>
+    <Setting Name="RPCdestination" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="RPCport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8070</Value>
+    </Setting>
+    <Setting Name="RPCtrailing" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/json_rpc</Value>
+    </Setting>
+    <Setting Name="hasWallet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="walletPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="defaultFee" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
