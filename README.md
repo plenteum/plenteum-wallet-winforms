@@ -6,7 +6,7 @@ Plenteum Wallet written in C# for Windows OS (can run on Linux and Mac with Mono
 
 # Simple CPU/GPU Mining from within your wallet
 
-Click the Mining tab on the bottom right, and click "Start Mining" to get up and running. XMR-Stak will detect the optimal config for for CPU, AMD and/or Nvidia GPU's. Of course you can also fine tune the config files xmr-stak generates. Visit http://www.xmrstak.com for benchmarks!
+Click the Mining tab on the bottom right, and click "Start Mining" to get up and running. XMR-Stak will detect the optimal config for your CPU, AMD and/or Nvidia GPU's. Of course you can also fine tune the config files xmr-stak generates. Visit http://www.xmrstak.com for benchmarks!
 
 # Download and Running
 
