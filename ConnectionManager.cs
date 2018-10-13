@@ -123,7 +123,7 @@ namespace PlenteumWallet
             {
                 //There's no local daemon process running, so start service with a remote node
                 //gui.plenteum.com -round-robin DNS  
-                p.StartInfo.Arguments = CLIEncoder.Encode(new string[] { "-w", wallet, "-p", pass, "--rpc-password", _rpcRand, "--daemon-address", "197.81.192.73", "--daemon-port", "44016" });
+                p.StartInfo.Arguments = CLIEncoder.Encode(new string[] { "-w", wallet, "-p", pass, "--rpc-password", _rpcRand, "--daemon-address", "142.93.132.203", "--daemon-port", "44016" });
             }
             else
             {
