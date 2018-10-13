@@ -258,7 +258,7 @@ namespace PlenteumWallet
                     }
                     else
                     {
-                        MessageBox.Show("Plenteum Wallet has tried numerous times to relaunch the needed daemon and has failed. Please relaunch the wallet!", "service daemon could not be recovered!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Plenteum Wallet has tried numerous times to relaunch the needed daemon and has failed. Please relaunch the wallet!", "wallet-service daemon could not be recovered!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         windowLogger.Log(LogTextbox, "Plenteum Wallet has tried numerous times to relaunch the needed daemon and has failed. Please relaunch the wallet!");
                         Utilities.Close(this);
                     }

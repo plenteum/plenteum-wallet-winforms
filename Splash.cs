@@ -54,9 +54,9 @@ namespace PlenteumWallet
                 {
                     this.StatusLabel.BeginInvoke((MethodInvoker)delegate () { this.StatusLabel.Text = "Daemon Connection Failed: " + connReturn.Item2; });
 
-                    if (System.IO.File.Exists("service.log")) 
+                    if (System.IO.File.Exists("wallet-service.log")) 
                     {
-                        using (StreamReader sr = new StreamReader("service.log"))
+                        using (StreamReader sr = new StreamReader("wallet-service.log"))
                         {
                             string contents = sr.ReadToEnd();
 
@@ -86,9 +86,9 @@ namespace PlenteumWallet
                 {
                     string lastLine = "";
                     bool lineWasUpdated = false;
-                    if (System.IO.File.Exists("service.log"))
+                    if (System.IO.File.Exists("wallet-service.log"))
                     {
-                        var fs = new FileStream("service.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                        var fs = new FileStream("wallet-service.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                         using (var sr = new StreamReader(fs))
                         {
                             while (!sr.EndOfStream)
@@ -138,7 +138,7 @@ namespace PlenteumWallet
                             continue;
                         }
 
-                        if (Process.GetProcessesByName("service").Length < 1 || connReturn.Item3 == null)
+                        if (Process.GetProcessesByName("wallet-service").Length < 1 || connReturn.Item3 == null)
                         {
                             throw new Exception("Daemon exited!");
                         }
@@ -168,7 +168,7 @@ namespace PlenteumWallet
                     }
                     catch (Exception ex)
                     {
-                        if (Process.GetProcessesByName("service").Length < 1 || connReturn.Item3 == null)
+                        if (Process.GetProcessesByName("wallet-service").Length < 1 || connReturn.Item3 == null)
                         {
                             throw new Exception("Daemon exited!");
                         }

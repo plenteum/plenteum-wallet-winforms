@@ -95,16 +95,16 @@ namespace PlenteumWallet
                 return;
             }
 
-            var serviceexe = System.IO.Path.Combine(curDir, "service.exe");
+            var serviceexe = System.IO.Path.Combine(curDir, "wallet-service.exe");
 
             if (IsRunningOnMono())
             {
-                serviceexe = System.IO.Path.Combine(curDir, "service");
+                serviceexe = System.IO.Path.Combine(curDir, "wallet-service");
             }
 
             if (!System.IO.File.Exists(serviceexe))
             {
-                MessageBox.Show("The 'service' daemon is missing from the folder the wallet is currently running from! Please place 'service' next to your wallet exe and run again!", "Plenteum Wallet Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The 'wallet-service' daemon is missing from the folder the wallet is currently running from! Please place 'service' next to your wallet exe and run again!", "Plenteum Wallet Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Utilities.SetDialogResult(this, DialogResult.Abort);
                 Utilities.Close(this);
             }

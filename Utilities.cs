@@ -32,7 +32,7 @@ namespace PlenteumWallet
                 else
                 {
                     /* Kill the launched service in the background */
-                    var conflictingProcesses = Process.GetProcessesByName("service").Concat(Process.GetProcessesByName("xmr-stak")).ToArray();
+                    var conflictingProcesses = Process.GetProcessesByName("wallet-service").Concat(Process.GetProcessesByName("xmr-stak")).ToArray();
 
                     int numConflictingProcesses = conflictingProcesses.Length;
 

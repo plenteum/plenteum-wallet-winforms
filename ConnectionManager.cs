@@ -84,11 +84,11 @@ namespace PlenteumWallet
         public static Tuple<bool,string, Process> StartDaemon(string wallet, string pass)
         {
             var curDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            var serviceexe = System.IO.Path.Combine(curDir, "service.exe");
+            var serviceexe = System.IO.Path.Combine(curDir, "wallet-service.exe");
 
             if (IsRunningOnMono())
             {
-                serviceexe = System.IO.Path.Combine(curDir, "service");
+                serviceexe = System.IO.Path.Combine(curDir, "wallet-service");
             }
 
             if (!System.IO.File.Exists(wallet))
@@ -96,7 +96,7 @@ namespace PlenteumWallet
                 return Tuple.Create<bool,string,Process>(false, "Wallet file cannot be found! Must exit!", null);
             }
 
-            var conflictingProcesses = Process.GetProcessesByName("service").ToArray();
+            var conflictingProcesses = Process.GetProcessesByName("wallet-service").ToArray();
             int numConflictingProcesses = conflictingProcesses.Length;
 
             for (int i = 0; i < numConflictingProcesses; i++)
@@ -111,7 +111,7 @@ namespace PlenteumWallet
             /* Delete service.log if it exists so we can ensure when reading
                the file later upon a crash, that we are reporting the proper
                crash reason and not some previous crash */
-            System.IO.File.Delete("service.log");
+            System.IO.File.Delete("wallet-service.log");
 
             Process p = new Process();
             p.StartInfo.CreateNoWindow = true;
