@@ -206,6 +206,9 @@
     <Content Include="Resources\ple.ico" />
     <Content Include="Resources\ple_banner.png" />
     <Content Include="Resources\small_block.png" />
+    <Content Include="wallet-service.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="FodyWeavers.xml" />
     <Content Include="ple.ico" />
     <Content Include="Resources\block.png" />

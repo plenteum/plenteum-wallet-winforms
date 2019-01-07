@@ -208,8 +208,9 @@ namespace PlenteumWallet
                     throw new Exception("getBalance call failed: " + balances.Item2);
                 }
 
-                float availableBal = (float)(balances.Item3["availableBalance"]) / 100000000;
-                float lockedBal = (float)(balances.Item3["lockedAmount"]) / 100000000;
+                //TODO: fix available balance display
+                double availableBal = (double)(balances.Item3["availableBalance"]) / 100000000;
+                double lockedBal = (double)(balances.Item3["lockedAmount"]) / 100000000;
 
                 this.availableAmountLabel.BeginInvoke((MethodInvoker)delegate () { this.availableAmountLabel.Text = availableBal.ToString("N2") + " PLE"; });
                 this.lockedAmountLabel.BeginInvoke((MethodInvoker)delegate () { this.lockedAmountLabel.Text = lockedBal.ToString("N2") + " PLE"; });
@@ -335,7 +336,7 @@ namespace PlenteumWallet
 
                         System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                         dtDateTime = dtDateTime.AddSeconds((long)(transaction["timestamp"])).ToLocalTime();
-                        var ts = dtDateTime.ToString("yyyy/MM/dd HH:mm:ss tt");
+                        var ts = dtDateTime.ToString("yyyy/MM/dd HH:mm:ss");
                         var dateItem = new System.Windows.Forms.ListViewItem.ListViewSubItem(null, ts, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29))))), new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
                         subitems.Add(dateItem);
 
@@ -382,7 +383,7 @@ namespace PlenteumWallet
             //    }
             //}
 
-            string titleUpdate = "Plenteum Wallet - Network Sync [" + status["blockCount"].ToString() + " / " + status["knownBlockCount"].ToString() + "] | Peers: " + status["peerCount"].ToString() + " | Updated: " + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss tt");
+            string titleUpdate = "Plenteum Wallet - Network Sync [" + status["blockCount"].ToString() + " / " + status["knownBlockCount"].ToString() + "] | Peers: " + status["peerCount"].ToString() + " | Updated: " + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
             this.BeginInvoke((MethodInvoker)delegate ()
             {
                 this.Text = titleUpdate;
@@ -457,7 +458,7 @@ namespace PlenteumWallet
             string sendAddr = recipientAddressText.Text;
             string paymentID = paymentIdText.Text;
             Int64 amount = 0;
-            int fee = 10;
+            int fee = 0;
 
             if (!sendAddr.StartsWith("PLe") || sendAddr.Length != 98)
             {
@@ -752,7 +753,7 @@ namespace PlenteumWallet
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 p.StartInfo.FileName = miningexe;
                 p.OutputDataReceived += CaptureOutput;
-                p.StartInfo.Arguments = CLIEncoder.Encode(new string[] { "-o", comboBox1.Text + ":" + txtPoolPort.Text, "-u", address, "-p", "plegui", "--currency", "turtlecoin", "-r", "plegui", "-i", "7659"});
+                p.StartInfo.Arguments = CLIEncoder.Encode(new string[] { "-o", comboBox1.Text + ":" + txtPoolPort.Text, "-u", address, "-p", "plegui", "--currency", "plenteum", "-r", "plegui", "-i", "7659"});
 
                 int maxConnectionAttempts = 5;
 
