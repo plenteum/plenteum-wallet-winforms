@@ -151,7 +151,7 @@ namespace PlenteumWallet
 
         public static Tuple<bool,JObject> Get_live_stats()
         {
-            string pool = "http://ple.virtopia.ca:8117/live_stats";
+            string pool = "https://ple.pool.plenteum.com/live_stats";
             string content = "";
 
             try
