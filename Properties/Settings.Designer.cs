@@ -106,5 +106,37 @@ namespace PlenteumWallet.Properties {
                 this["defaultFee"] = value;
             }
         }
+        // ********
+        // Add your own Wallet NODE
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("two.public.plenteum.com")]
+        public string deIP
+        {
+            get
+            {
+                return ((string)(this["deIP"]));
+            }
+            set
+            {
+                this["deIP"] = value;
+            }
+        }
+        // ADD NODE PORT
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("44016")]
+        public string dePort
+        {
+            get
+            {
+                return ((string)(this["dePort"]));
+            }
+            set
+            {
+                this["dePort"] = value;
+            }
+        }
+        // End of extras
     }
 }
